@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <a class="link"(click)="TOFAV()">Home</a>
+    <a class="link" routerLink="/fav">Favorite</a>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <p>
+      Notes
+    </p>
+    <table class="center">
+      <tr>
+        <td>Judul:</td>
+        <td><input type="text" [(ngModel)]="judul"> </td>
+      </tr>
+      <tr>
+         <td>tanggal:</td>
+        <td><input type="text" [(ngModel)]="tanggal"> </td>
+      </tr>
+      <tr>
+         <td>Isi:</td>
+        <td><input type="text" [(ngModel)]="isi"> </td>
+      </tr>
+    </table>
+    <button (click)="SUBMITNOTE()">Submit</button>
+    <div *ngFor="let item of data; let n = index">
+      <button (click)="TODET(item.index)">{{ item.judul }} </button><br /> {{ item.tanggal }} <br /> {{ item.isi }} <br /><button (click)="FAV(n)">Fav</button> <p>--------------------------</p>
+      </div>
+  </div>
+</ion-content>

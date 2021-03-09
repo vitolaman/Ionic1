@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <a class="link" routerLink="/home">Home</a>
+    <a class="link" routerLink="/fav">Favorite</a>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    {{ data.judul }} <br /> {{ data.tanggal }} <br /> {{ data.isi }} <br /><button (click)="FAV(data.index)">Fav</button> <p>--------------------------</p>
+  </div>
+
+
+</ion-content>
